@@ -1,0 +1,5 @@
+body {
+    background: #000000 url(../img/bg.jpg) no-repeat; /* Цвет фона и путь к файлу */
+	background-size: cover;
+    color: #fff; /* Цвет текста */
+   }
