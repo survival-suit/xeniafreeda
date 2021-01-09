@@ -1,5 +1,8 @@
 body {
-    background: #000000 url(../img/bg.jpg) no-repeat; /* Цвет фона и путь к файлу */
+    background: #000000 url(../img/bg.jpg); /* Цвет фона и путь к файлу */
+	background-repeat: no-repeat;  
+	background-position: center center;
+	background-attachment: fixed;
 	background-size: cover;
     color: #fff; /* Цвет текста */
    }
