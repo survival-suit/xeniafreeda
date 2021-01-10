@@ -3,6 +3,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Xenia Freeda</title>
+		<script src="js/divFlicker.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 		
 		<!-- Подключаем Bootstrap CSS -->
@@ -15,25 +16,8 @@
 	<body>	
 		<div id="mainbtn" class="center from-top">Найти строку</div>	
 		<script type="text/javascript">
-		let divColor = 0;
-
-		let divColorInterval = setInterval(function() {
-		  			if (divColor == 0) 
-		  				{
-		  					divColor = 1;
-		  					document.getElementById("mainbtn").style.backgroundColor = "#3c554f42";
-		  					document.getElementById("mainbtn").style.transition = "2s";
-		  					console.log(divColor);
-
-		  				}
-		  			else{
-		  					divColor = 0;
-		  					document.getElementById("mainbtn").style.backgroundColor = "#ffffff00";
-		  					document.getElementById("mainbtn").style.transition = "2s";
-		  					console.log(divColor);
-		  				}
-			}, 2000);
-
+			let divColor = 0;
+			let divColorInterval = setInterval(() => divFlicker(document.getElementById("mainbtn")), 2000);
         </script>       	
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 		<!-- Подключаем Bootstrap JS -->
