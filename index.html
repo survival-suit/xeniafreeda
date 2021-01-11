@@ -3,8 +3,10 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Xenia Freeda</title>
+		<script src="js/sleep.js"></script>
 		<script src="js/divFlicker.js"></script>
 		<script src="js/findString.js"></script>
+		<script src="js/slowShow.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 		
 		<!-- Подключаем Bootstrap CSS -->
@@ -14,12 +16,15 @@
 		<link rel="stylesheet" href="fontawesome/css/fontawesome.min.css" >-->
 
 	</head>
-	<body>	
-		<div id="mainbtn" class="center from-top" onclick="findString();">Найти строку</div>
+	<body>
+		<div id="mainbtn" class="center from-top" hidden="true" onclick="findString(this);">Найти строку</div>
 		<div id="string" hidden="true">Строка</div>	
 		<script type="text/javascript">
-			let divColor = 0;
-			let divColorInterval = setInterval(() => divFlicker(document.getElementById("mainbtn")), 2000);
+			let divColor = 1;
+			slowShow(document.getElementById("mainbtn"));
+			divFlicker(document.getElementById("mainbtn"));
+			let divColorInterval = setInterval(() => divFlicker(document.getElementById("mainbtn")), 2000);	
+				
         </script>       	
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 		<!-- Подключаем Bootstrap JS -->

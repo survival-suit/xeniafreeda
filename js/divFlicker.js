@@ -15,8 +15,8 @@ function divFlicker(elemFlick)
 		  	}
 		else{
 		  		divColor = 0;
-		  		document.getElementById("mainbtn").style.backgroundColor = "#ffffff00";
-		  		document.getElementById("mainbtn").style.transition = "2s";
+		  		elemFlick.style.backgroundColor = "#ffffff00";
+		  		elemFlick.style.transition = "2s";
 		  		
 		  		/*
 		  		document.getElementById("mainbtn").style.backgroundColor = "#ffffff00";
