@@ -4,6 +4,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Xenia Freeda</title>
 		<script src="js/divFlicker.js"></script>
+		<script src="js/findString.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 		
 		<!-- Подключаем Bootstrap CSS -->
@@ -14,7 +15,8 @@
 
 	</head>
 	<body>	
-		<div id="mainbtn" class="center from-top">Найти строку</div>	
+		<div id="mainbtn" class="center from-top" onclick="findString();">Найти строку</div>
+		<div id="string" hidden="true">Строка</div>	
 		<script type="text/javascript">
 			let divColor = 0;
 			let divColorInterval = setInterval(() => divFlicker(document.getElementById("mainbtn")), 2000);
