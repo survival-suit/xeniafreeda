@@ -5,23 +5,10 @@ function divFlicker(elemFlick)
 		  		divColor = 1;
 		  		elemFlick.style.backgroundColor = "#3c554f42";
 		  		elemFlick.style.transition = "2s";
-		  		
-		  		/*
-		  		document.getElementById("mainbtn").style.backgroundColor = "#3c554f42";
-		  		document.getElementById("mainbtn").style.transition = "2s";
-		  		*/
-		  		console.log(divColor);
-
 		  	}
 		else{
 		  		divColor = 0;
 		  		elemFlick.style.backgroundColor = "#ffffff00";
 		  		elemFlick.style.transition = "2s";
-		  		
-		  		/*
-		  		document.getElementById("mainbtn").style.backgroundColor = "#ffffff00";
-		  		document.getElementById("mainbtn").style.transition = "2s";
-		  		*/
-		  		console.log(divColor);
 		  	}
 	}
