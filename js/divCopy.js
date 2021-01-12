@@ -1,8 +1,6 @@
 function divCopy(divToCopy)
 	{
-		//let divText = 2*document.getElementById("mainbtn").innerHTML;
 		let divText = divToCopy.innerHTML;
-		alert(divText);
 
 		const modifyCopy = (e) => 
 			{

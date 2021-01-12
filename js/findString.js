@@ -1,48 +1,38 @@
-async function findString(elemDissipate)
+function findString(elemDissipate)
 	{
+		let bookString;
 		slowHide(elemDissipate);
 
-		if(!elemDissipate.hidden)
-		{			
-			setTimeout(
-				function()
-					{
-						document.getElementById("string").innerHTML = "Это строка";
-						slowShow(document.getElementById("string"));
-					}, 1500);
-						
-			clearInterval(divColorInterval);//остановка интервала мерцания div-кнопки				
-		}			
-
-		
-		let response =  await fetch('json/bookStrings.json');
-
-		if (response.ok) { // если HTTP-статус в диапазоне 200-299
-		  // получаем тело ответа (см. про этот метод ниже)
-		  let json =  await response.json();
-		  alert(json);
-		} else {
-		  alert("Ошибка HTTP: " + response.status);
-		}
-		
-		/*
+		/*запрашиваем с сервера  JSON*/
 		let xhr = new XMLHttpRequest(); 
-        let adr = 'json/bookStrings.json';									
-        xhr.open("GET", adr, true);									
+		let adr = 'json/bookStrings.json';									
+		xhr.open("GET", adr, true);									
 		xhr.responseType = "json"; 
 		xhr.send();		
 		xhr.onload = () => 
 			{    
 				if (xhr.status === 200) 
 					{																
-						let paths = xhr.response;
-						alert(paths);	
-						let stringNum = Math.floor(Math.random() * (paths.length));	
-						alert(stringNum);
-						let bookString = paths[stringNum].bookString;												
+						let paths = xhr.response;	
+						let stringNum = Math.floor(Math.random() * paths.length); //от 0 до paths.length-1											
+						bookString = paths[stringNum].bookString;
+						alert(bookString);											
 					}
 				else alert(`${xhr.status}: ${xhr.statusText}`);
-			};
-			
-			xhr.onerror = () => {alert(`Ошибка сети. Сервер не отдал код ошибки.`);};*/
+			};			
+		xhr.onerror = () => {alert(`Ошибка сети. Сервер не отдал код ошибки.`);};
+
+		if(!elemDissipate.hidden)
+		{			
+			setTimeout(
+				function()
+					{
+						/*Присваиваем div-блоку значение строки*/
+						document.getElementById("string").innerHTML = bookString;
+						slowShow(document.getElementById("string"));
+					}, 1500);			
+		}		
+
+		divStringInterval = setInterval(() => divFlicker(document.getElementById("string")), 2000);			
+		clearInterval(divButtonInterval);//остановка интервала мерцания div-кнопки				
 	}
