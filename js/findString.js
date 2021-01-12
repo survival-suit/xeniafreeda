@@ -1,9 +1,33 @@
-function findString(elemDissipate)
+async function findString(elemDissipate)
 	{
 		slowHide(elemDissipate);
-/*
+
+		if(!elemDissipate.hidden)
+		{			
+			setTimeout(
+				function()
+					{
+						document.getElementById("string").innerHTML = "Это строка";
+						slowShow(document.getElementById("string"));
+					}, 1500);
+						
+			clearInterval(divColorInterval);//остановка интервала мерцания div-кнопки				
+		}			
+
+		/*
+		let response =  await fetch('https://xeniafreeda.com/json/bookStrings.json');
+
+		if (response.ok) { // если HTTP-статус в диапазоне 200-299
+		  // получаем тело ответа (см. про этот метод ниже)
+		  let json =  await response.json();
+		  alert(json);
+		} else {
+		  alert("Ошибка HTTP: " + response.status);
+		}
+		*/
+		
 		let xhr = new XMLHttpRequest(); 
-        let adr = 'https://www.dropbox.com/s/wi0cu7tyq6ri9yr/bookStrings.json';									
+        let adr = '/json/bookStrings.json';									
         xhr.open("GET", adr, true);									
 		xhr.responseType = "json"; 
 		xhr.send();		
@@ -19,5 +43,5 @@ function findString(elemDissipate)
 				else alert(`${xhr.status}: ${xhr.statusText}`);
 			};
 			
-			xhr.onerror = () => {alert(`Ошибка сети. Сервер не отдал код ошибки.`);};*/
+			xhr.onerror = () => {alert(`Ошибка сети. Сервер не отдал код ошибки.`);};
 	}

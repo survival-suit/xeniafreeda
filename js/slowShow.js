@@ -3,7 +3,7 @@ function slowShow(elemSlowShow)
 
 		elemSlowShow.hidden = false;
 		elemSlowShow.style.opacity = 0;
-		elemSlowShow.style.transition = "3s";
+		elemSlowShow.style.transition = "4s";
  
 		window.requestAnimationFrame
 		(

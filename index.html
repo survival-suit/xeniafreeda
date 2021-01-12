@@ -8,6 +8,7 @@
 		<script src="js/findString.js"></script>
 		<script src="js/slowShow.js"></script>
 		<script src="js/slowHide.js"></script>
+		<script src="js/divCopy.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 		
 		<!-- Подключаем Bootstrap CSS -->
@@ -19,7 +20,7 @@
 	</head>
 	<body>
 		<div id="mainbtn" class="center from-top" hidden="true" onclick="findString(this);">Найти строку</div>
-		<div id="string" hidden="true">Строка</div>	
+		<div id="string" class="stringbook" hidden="true" onclick="divCopy(this);"></div>	
 		<script type="text/javascript">
 			let divColor = 1;
 			slowShow(document.getElementById("mainbtn"));
