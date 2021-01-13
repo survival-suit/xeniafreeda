@@ -3,7 +3,7 @@ function findString(elemDissipate)
 		let bookString;
 		slowHide(elemDissipate);
 
-		/*запрашиваем с сервера  JSON*/
+		//запрашиваем с сервера  JSON
 		let xhr = new XMLHttpRequest(); 
 		let adr = 'json/bookStrings.json';									
 		xhr.open("GET", adr, true);									
@@ -29,9 +29,9 @@ function findString(elemDissipate)
 						/*Присваиваем div-блоку значение строки*/
 						document.getElementById("string").innerHTML = bookString;
 						slowShow(document.getElementById("string"));
+						divStringInterval = setInterval(() => divFlicker(document.getElementById("string")), 2000);
+						slowShow(document.getElementById("copybtn"));
 					}, 1500);			
-		}		
-
-		divStringInterval = setInterval(() => divFlicker(document.getElementById("string")), 2000);			
+		}						
 		clearInterval(divButtonInterval);//остановка интервала мерцания div-кнопки				
 	}

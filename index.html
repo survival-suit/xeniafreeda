@@ -21,7 +21,8 @@
 	</head>
 	<body>
 		<div id="mainbtn" class="center from-top" hidden="true" onclick="findString(this);">Найти строку</div>
-		<div id="string" class="stringbook" hidden="true" onclick="divCopy(this);"></div>	
+		<div id="string" class="stringbook" hidden="true" onclick="divCopy(this);"></div>		
+		<button id="copybtn" class="btnn" hidden="true" data-clipboard-action="copy" data-clipboard-target="#string">Скопировать</button>		
 		<script type="text/javascript">
 			let divColor = 1;
 			let divButtonInterval;
@@ -30,7 +31,19 @@
 			divFlicker(document.getElementById("mainbtn"));
 			divButtonInterval = setInterval(() => divFlicker(document.getElementById("mainbtn")), 2000);	
 				
-        </script>       	
+        </script>   
+        <script src="clipboard/clipboard.min.js"></script> 
+        <script>			    
+			    var clipboard = new ClipboardJS('.btnn');
+
+			    clipboard.on('success', function(e) {
+			        console.log(e);
+			    });
+
+			    clipboard.on('error', function(e) {
+			        console.log(e);
+			    });   
+        </script>   	
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 		<!-- Подключаем Bootstrap JS -->
 		<script src="bootstrap/js/bootstrap.min.js"></script>	
