@@ -15,8 +15,7 @@ function findString(elemDissipate)
 					{																
 						let paths = xhr.response;	
 						let stringNum = Math.floor(Math.random() * paths.length); //от 0 до paths.length-1											
-						bookString = paths[stringNum].bookString;
-						alert(bookString);											
+						bookString = paths[stringNum].bookString;											
 					}
 				else alert(`${xhr.status}: ${xhr.statusText}`);
 			};			
