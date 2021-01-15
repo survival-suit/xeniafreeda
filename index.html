@@ -10,6 +10,7 @@
 		<script src="js/slowShow.js"></script>
 		<script src="js/slowHide.js"></script>
 		<script src="js/divCopy.js"></script>
+		<script src="js/tryAgain.js"></script>	
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 		
 		<!-- Подключаем Bootstrap CSS -->
@@ -20,14 +21,15 @@
 
 	</head>
 	<body>
-		<div id="mainbtn" class="center from-top" hidden="true" onclick="findString(this);">Найти строку</div>
+		<div id="mainbtn" class="center from-top" hidden="true" onclick="findString(this);">Получить ответ</div>
 		<div id="string" class="stringbook" hidden="true" onclick="divCopy(this);"></div>		
-		<button id="copybtn" class="btnn" hidden="true" data-clipboard-action="copy" data-clipboard-target="#string">Скопировать</button>		
+		<button id="copybtn" class="btnn" hidden="true" data-clipboard-action="copy" data-clipboard-target="#string">Скопировать текст</button>
+		<button id="refreshbtn" class="btnn" hidden="true" onclick="tryAgain();">Попробовать снова</button>		
 		<script type="text/javascript">
 			let divColor = 1;
 			let divButtonInterval;
 			let divStringInterval;
-			slowShow(document.getElementById("mainbtn"));
+			slowShow(document.getElementById("mainbtn"), "4s");
 			divFlicker(document.getElementById("mainbtn"));
 			divButtonInterval = setInterval(() => divFlicker(document.getElementById("mainbtn")), 2000);	
 				

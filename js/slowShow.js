@@ -1,9 +1,9 @@
-function slowShow(elemSlowShow)
+function slowShow(elemSlowShow, time)
 	{
 
 		elemSlowShow.hidden = false;
 		elemSlowShow.style.opacity = 0;
-		elemSlowShow.style.transition = "4s";
+		elemSlowShow.style.transition = time;
  
 		window.requestAnimationFrame
 		(

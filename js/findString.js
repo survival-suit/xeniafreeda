@@ -1,7 +1,7 @@
 function findString(elemDissipate)
 	{
 		let bookString;
-		slowHide(elemDissipate);
+		slowHide(elemDissipate, "1.8s");
 
 		//запрашиваем с сервера  JSON
 		let xhr = new XMLHttpRequest(); 
@@ -28,9 +28,10 @@ function findString(elemDissipate)
 					{
 						/*Присваиваем div-блоку значение строки*/
 						document.getElementById("string").innerHTML = bookString;
-						slowShow(document.getElementById("string"));
+						slowShow(document.getElementById("string"), "4s");
 						divStringInterval = setInterval(() => divFlicker(document.getElementById("string")), 2000);
-						slowShow(document.getElementById("copybtn"));
+						slowShow(document.getElementById("copybtn"), "4s");
+						slowShow(document.getElementById("refreshbtn"), "4s");
 					}, 1500);			
 		}						
 		clearInterval(divButtonInterval);//остановка интервала мерцания div-кнопки				
