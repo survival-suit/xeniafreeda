@@ -125,6 +125,8 @@ body {
 
 .btnn {
 	margin: 10px;
+	border:none;
+	outline: none;
 	border-style: solid;
 	border-color: var(--def);
   	position: relative;	
@@ -196,6 +198,8 @@ body {
 
   	.btnn {
 	margin: 5px;
+	border:none;
+	outline: none;
 	border-style: solid;
 	border-color: var(--def);
   	position: relative;	
